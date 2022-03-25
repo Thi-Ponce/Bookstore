@@ -1,5 +1,4 @@
 import { PropTypes } from 'prop-types';
-import './Book.css';
 
 const Book = ({ data }) => {
   const { genre, title, author } = data;

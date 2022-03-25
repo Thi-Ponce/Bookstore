@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
-import './Header.css';
 
 const Navbar = () => (
-  <header className='Header'>
+  <header className="Header">
     <h1 className="header-title">Bookstore CMS</h1>
     <nav className="navbar">
       <ul>
