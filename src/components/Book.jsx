@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 import './Book.css';
 
-const Book = (data) => {
+const Book = ({ data }) => {
   const { genre, title, author } = data;
 
   return (
@@ -22,7 +22,7 @@ const Book = (data) => {
 };
 
 Book.propTypes = {
-    data: PropTypes.instanceOf(Object).isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Book;
