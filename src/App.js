@@ -1,16 +1,24 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import './App.css';
+import Home from './components/Home';
 import Navbar from './components/Navbar';
-import Container from './components/Homepage';
 import Categories from './components/Categories';
 
-const App = () => (
-  <BrowserRouter>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Container />} />
-      <Route path="/categories" element={<Categories />} />
-    </Routes>
-  </BrowserRouter>
-);
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;

@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 
-const Book = ({ data }) => {
-  const { genre, title, author } = data;
+const Book = (props) => {
+  const { genre, title, author } = props;
 
   return (
     <li className="Book-Info">
@@ -21,7 +21,9 @@ const Book = ({ data }) => {
 };
 
 Book.propTypes = {
-  data: PropTypes.instanceOf(Object).isRequired,
+  genre: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
 };
 
 export default Book;
