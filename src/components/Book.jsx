@@ -1,18 +1,27 @@
 import { PropTypes } from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteBook } from '../redux/books/books';
 
 const Book = (props) => {
-  const { genre, title, author } = props;
+  const {
+    title, author,
+  } = props;
+
+  const dispatch = useDispatch();
+
+  const removeBook = () => {
+    dispatch(deleteBook({ title }));
+  };
 
   return (
-    <li className="Book-Info">
-      <div className="Item-Header">
-        <p className="Genre">{genre}</p>
-        <h2 className="Title">{title}</h2>
+    <li className="Listing">
+      <div className="header">
+        <h3 className="Title">{title}</h3>
         <p className="Author">{author}</p>
-        <div className="btn-container">
-          <button className="btn-comment" type="button">Comments</button>
-          <button className="btn-remove" type="button">Remove</button>
-          <button className="btn-edit" type="button">Edit</button>
+        <div className="button-container">
+          <button className="Comments" type="button">Comments</button>
+          <button onClick={removeBook} className="Comments" type="button">Remove</button>
+          <button className="Comments" type="button">Edit</button>
         </div>
       </div>
       <div className="progress" />
@@ -21,7 +30,6 @@ const Book = (props) => {
 };
 
 Book.propTypes = {
-  genre: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
