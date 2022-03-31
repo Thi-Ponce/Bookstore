@@ -1,11 +1,8 @@
+import { shallowEqual, useSelector } from 'react-redux';
 import Book from './Book';
 
 const List = () => {
-  const books = [
-    {
-      id: 1, title: 'Crime and Punishment', author: 'Fyodor Dostoevski', genre: 'Philosophical novel',
-    },
-  ];
+  const books = useSelector((state) => state.books, shallowEqual);
   return books.map((book) => (
     <Book genre={book.genre} title={book.title} author={book.author} key={book.id} />
   ));
