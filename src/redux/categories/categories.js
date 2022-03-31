@@ -1,4 +1,4 @@
-const CHECKSTATUS = 'CHECKSTATUS';
+const CHECKSTATUS = 'bookStore/categories/CHECK_STATUS';
 
 const beginState = {};
 

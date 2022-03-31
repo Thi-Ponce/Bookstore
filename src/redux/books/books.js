@@ -1,7 +1,17 @@
-const ADDBOOK = 'ADDBOOK';
-const REMOVEBOOK = 'REMOVEBOOK';
+const ADDBOOK = 'bookStore/books/ADD_BOOK';
+const REMOVEBOOK = 'bookStore/books/REMOVE_BOOK';
 
-const beginState = [];
+const beginState = [
+  {
+    id: 1, title: 'Crime and Punishment', author: 'Fyodor Dostoevski', genre: 'Philosophical novel',
+  },
+  {
+    id: 2, title: 'The Masque of the Red Death', author: 'Edgar Allan Poe', genre: 'Gothic fiction',
+  },
+  {
+    id: 3, title: 'Harry Potter and the Half-Blood Prince', author: 'J.K. Rowling', genre: 'Fantasy',
+  },
+];
 
 export const addBook = (payload) => ({
   type: 'ADDBOOK',
