@@ -5,7 +5,7 @@ const Categories = () => {
   const dispatch = useDispatch();
   return (
     <div className="categories">
-      <p className="progress">Progress will be here</p>
+      <h1>Categories list</h1>
       <button
         type="button"
         onClick={() => {

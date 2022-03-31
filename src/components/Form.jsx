@@ -3,23 +3,40 @@ import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
+  const [bookTitle, setTitle] = useState('');
+  const [bookAuthor, setAuthor] = useState('');
+
   const dispatch = useDispatch();
-  const [bookTitle, setBookTitle] = useState();
-  const [bookAuthor, setBookAuthor] = useState();
-  const submitForm = (e) => {
-    e.preventDefault();
+
+  const submitForm = (event) => {
+    event.preventDefault();
     dispatch(addBook({
       title: bookTitle,
       author: bookAuthor,
     }));
   };
+
   return (
     <div className="form-container">
-      <h2>Add a new book</h2>
+      <h2 className="form-title">ADD BOOK</h2>
       <form onSubmit={submitForm}>
-        <input required value={bookTitle} type="text" name="name" placeholder="Book title" onChange={(e) => setBookTitle(e.target.value)} />
-        <input required value={bookAuthor} type="text" name="author" placeholder="Author" onChange={(e) => setBookAuthor(e.target.value)} />
-        <button className="add-btn" type="submit">
+        <input
+          className="book-title"
+          type="text"
+          required
+          placeholder="Title"
+          value={bookTitle}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        <input
+          className="book-author"
+          type="text"
+          required
+          placeholder="Author"
+          value={bookAuthor}
+          onChange={(event) => setAuthor(event.target.value)}
+        />
+        <button className="add-button" type="submit">
           Add
         </button>
       </form>
