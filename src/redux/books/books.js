@@ -25,6 +25,7 @@ export const addAPI = (Book) => async (dispatch) => {
       item_id: Book.item_id,
       title: Book.title,
       author: Book.author,
+      category: Book.category,
     }),
     headers: { 'Content-type': 'application/JSON' },
   });
