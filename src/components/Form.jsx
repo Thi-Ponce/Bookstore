@@ -32,7 +32,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <h2 className="form-head">ADD BOOK</h2>
-      <form onSubmit={submitBookToStore}>
+      <form onSubmit={submitBookToStore} className="Form-content">
         <input
           className="form-title"
           type="text"
@@ -49,18 +49,16 @@ const Form = () => {
           value={author}
           onChange={(event) => setAuthor((event.target.value))}
         />
-        <div className="form-book-category">
-          <select className="select" default name="category" value={category} onChange={(event) => setCategory((event.target.value))}>
-            <option value="">
-              Category
+        <select className="select" default name="category" value={category} onChange={(event) => setCategory((event.target.value))}>
+          <option value="">
+            Category
+          </option>
+          {categories.sort().map((item) => (
+            <option value={item} key={item}>
+              {item}
             </option>
-            {categories.sort().map((item) => (
-              <option value={item} key={item}>
-                {item}
-              </option>
-            ))}
-          </select>
-        </div>
+          ))}
+        </select>
         <button className="add-btn" type="submit">
           Add
         </button>
